@@ -1,0 +1,302 @@
+/* =========================================
+   1. SETUP DASAR & VARIABLE
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary: #4a90e2; 
+    --dark: #1e293b;    
+    --light: #f8fafc;   
+    --gray: #64748b;
+    --navy-dark: #0f172a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; text-decoration: none; }
+
+body { font-family: 'Poppins', sans-serif; color: var(--dark); overflow-x: hidden; background-color: white; }
+
+html { scroll-behavior: smooth; }
+
+/* =========================================
+   2. NAVBAR
+   ========================================= */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.5rem 8%; position: fixed; width: 100%; top: 0;
+    background: white; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+.nav-links { display: flex; list-style: none; gap: 2rem; }
+.nav-links a { color: var(--dark); font-weight: 600; transition: 0.3s; }
+.nav-links a:hover { color: var(--primary); }
+
+/* =========================================
+   3. HERO SECTION (HALAMAN UTAMA)
+   ========================================= */
+.hero {
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    padding: 0 8%; background-color: var(--light); padding-top: 80px;
+}
+
+.hero-container { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+.hero-text { flex: 1; max-width: 600px; }
+.hero-text h1 { font-size: 3rem; font-weight: 800; margin: 10px 0; color: var(--dark); line-height: 1.2; }
+.typing-text { color: var(--primary); font-weight: 700; }
+
+.social-icons { margin-bottom: 30px; }
+.social-icons a {
+    display: inline-flex; justify-content: center; align-items: center;
+    width: 40px; height: 40px; background: transparent; border: 2px solid var(--primary);
+    border-radius: 50%; color: var(--primary); margin-right: 15px; font-size: 1.2rem; transition: 0.3s;
+}
+.social-icons a:hover { background: var(--primary); color: white; transform: translateY(-5px); }
+
+.btn {
+    padding: 12px 30px; background: var(--primary); color: white;
+    border-radius: 25px; font-weight: 600; transition: 0.3s; box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
+}
+.btn:hover { background: #357abd; transform: translateY(-3px); }
+
+.hero-img { flex: 1; display: flex; justify-content: flex-end; }
+.hero-img img {
+    width: 350px; height: 350px; object-fit: cover; border-radius: 50%;
+    border: 5px solid white; box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    animation: float 3s ease-in-out infinite;
+}
+@keyframes float { 0% { transform: translateY(0); } 50% { transform: translateY(-20px); } 100% { transform: translateY(0); } }
+
+/* =========================================
+   4. ABOUT SECTION
+   ========================================= */
+.section { padding: 5rem 8%; }
+.section-title { text-align: center; font-size: 2rem; margin-bottom: 2rem; color: var(--dark); font-weight: 700; }
+.bg-light { background: #f0f4f8; }
+
+/* =========================================
+   5. SKILLS SECTION (WARNA BIRU)
+   ========================================= */
+.skills-section {
+    background-color: var(--primary); 
+    padding: 5rem 8%;
+    color: white; 
+    /* Padding bottom dikurangi agar nyambung ke bawah */
+    padding-bottom: 2rem; 
+}
+
+.skills-grid {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;
+    margin-top: 40px;
+}
+
+.skill-card {
+    background-color: #0f172a; 
+    width: 160px; padding: 30px 10px; border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); text-align: center;
+    border: 1px solid rgba(255,255,255,0.1); transition: transform 0.3s ease;
+}
+.skill-card:hover { transform: translateY(-10px); background-color: white; }
+.skill-card:hover i { transform: scale(1.1); }
+.skill-card:hover p { color: var(--primary); }
+
+.skill-card i { font-size: 3.5rem; margin-bottom: 15px; display: inline-block; transition: 0.3s; }
+.skill-card p { color: #cbd5e1; font-weight: 500; margin-top: 10px; transition: 0.3s; }
+
+.skill-card img {
+    height: 60px; width: auto; margin-bottom: 15px;
+    display: inline-block; transition: transform 0.3s;
+}
+.skill-card:hover img { transform: scale(1.1); }
+
+
+/* =========================================
+   6. PORTOFOLIO SECTION (BACKGROUND BIRU)
+   ========================================= */
+section#projects {
+    background-color: var(--primary); /* Biru menyatu dengan atas */
+    width: 100%;
+    margin-top: 0; 
+    
+    padding-top: 50px; 
+    padding-bottom: 50px; /* Jarak bawah dikurangi agar nyambung footer */
+    padding-left: 8%;
+    padding-right: 8%;
+    
+    display: block; 
+    text-align: center;
+}
+
+section#projects .section-title {
+    margin-bottom: 60px;
+    color: white; /* Judul Putih */
+    display: block;
+}
+
+.project-grid {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem; 
+    width: 100%; 
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+
+/* Kartu tetap putih */
+.card {
+    background: white; 
+    padding: 20px; 
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+    text-align: center; 
+    transition: 0.3s;
+    border: none; 
+}
+.card:hover { transform: translateY(-10px); }
+
+.card-img-placeholder {
+    height: 150px; background: #e2e8f0; border-radius: 10px; margin-bottom: 15px;
+    display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #94a3b8;
+}
+
+/* =========================================
+   7. CONTACT SECTION (FIX CENTER PRESISI)
+   ========================================= */
+.contact-section {
+    min-height: 70vh; 
+    background-color: var(--primary); 
+    
+    /* Flexbox untuk menengahkan vertikal & horizontal */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    
+    text-align: center; /* Memastikan semua teks di dalam area ini rata tengah */
+    padding: 50px 20px; /* Padding aman kiri-kanan */
+    position: relative;
+}
+
+.footer-icons { 
+    width: 100%; /* Memastikan wadah icon selebar layar */
+    display: flex; 
+    justify-content: center; /* Memaksa icon ke tengah horizontal */
+    align-items: center;
+    gap: 25px; 
+    margin-bottom: 40px; 
+}
+
+/* Icon Sosmed */
+.footer-icons a {
+    display: flex; justify-content: center; align-items: center;
+    width: 70px; height: 70px; 
+    border: 2px solid white; 
+    border-radius: 50%; 
+    color: white; 
+    font-size: 2rem; 
+    transition: 0.3s;
+}
+
+.footer-icons a:hover { 
+    background-color: white; 
+    color: var(--primary); 
+    transform: translateY(-5px); 
+}
+
+/* Tombol Hubungi Saya */
+.btn-big {
+    padding: 18px 60px; 
+    font-size: 1.3rem; 
+    border-radius: 50px;
+    background-color: white; 
+    color: var(--primary);   
+    font-weight: 700;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    
+    /* Pastikan tombol dianggap inline-block agar mau di-tengah */
+    display: inline-block; 
+}
+
+.btn-big:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Copyright */
+.copyright {
+    width: 100%;       /* Wadah teks selebar layar */
+    text-align: center;/* Teks dipaksa rata tengah */
+    color: rgba(255, 255, 255, 0.8); 
+    font-size: 0.9rem; 
+    margin-top: 50px;
+}
+/* Tombol Hubungi Saya (Diubah jadi Putih Teks Biru) */
+.btn-big {
+    padding: 18px 60px; 
+    font-size: 1.3rem; 
+    border-radius: 50px;
+    
+    background-color: white; /* Tombol Putih */
+    color: var(--primary);   /* Teks Biru */
+    font-weight: 700;
+    
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.btn-big:hover {
+    transform: scale(1.05); /* Efek membesar sedikit */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Copyright (Putih agak transparan) */
+.copyright {
+    color: rgba(255, 255, 255, 0.8); 
+    font-size: 0.9rem; margin-top: 50px;
+}
+
+/* =========================================
+   8. RESPONSIVE MOBILE
+   ========================================= */
+.burger { display: none; cursor: pointer; }
+.burger div { width: 25px; height: 3px; background-color: var(--dark); margin: 5px; transition: all 0.3s ease; }
+
+@media (max-width: 768px) {
+    .navbar { padding: 1.5rem 5%; }
+    .hero { padding-top: 100px; height: auto; min-height: 100vh; padding-bottom: 50px; text-align: center; }
+    .hero-container { flex-direction: column-reverse; }
+    .hero-img { justify-content: center; margin-bottom: 30px; }
+    .hero-img img { width: 250px; height: 250px; }
+    .hero-text h1 { font-size: 2.2rem; }
+    
+    .nav-links {
+        display: none; width: 100%; position: absolute; top: 80px; left: 0;
+        background: white; flex-direction: column; align-items: center;
+        padding: 30px 0; box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    }
+    .nav-links.nav-active { display: flex; }
+    .nav-links li { margin: 15px 0; }
+    
+    .burger { display: block; }
+    
+    section#projects { padding-top: 50px; }
+}
+/* =========================================
+   STYLE FOTO PROYEK (Agar Rapi)
+   ========================================= */
+
+.project-img {
+    width: 100%;           /* Lebar memenuhi kartu */
+    height: 200px;         /* Tinggi dikunci agar seragam (tidak belang bentong) */
+    object-fit: cover;     /* PENTING: Memotong foto otomatis agar pas (tidak gepeng) */
+    border-radius: 10px;   /* Sudut foto membulat */
+    margin-bottom: 15px;   /* Jarak antara foto dan tulisan */
+    border: 1px solid #eee;
+}
+
+/* Mempercantik Kartu Proyek */
+.card h3 {
+    color: var(--primary); /* Judul proyek berwarna Biru */
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
